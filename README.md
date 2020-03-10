@@ -1,4 +1,14 @@
-# LvSample
+# LiveView Sample App
+
+## Environment
+```
+Elixir 1.9.2 (compiled with Erlang/OTP 22)
+Phoenix 1.4.0
+LiveView 0.9.0
+Smallex 0.2.3
+```
+
+## Usage
 
 To start your Phoenix server:
 
@@ -10,7 +20,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
-## Learn more
+## More into
 
   * Official website: http://www.phoenixframework.org/
   * Guides: https://hexdocs.pm/phoenix/overview.html
