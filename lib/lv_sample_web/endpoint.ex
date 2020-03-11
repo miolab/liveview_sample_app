@@ -1,6 +1,9 @@
 defmodule LvSampleWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :lv_sample
 
+  socket "/live", Phoenix.LiveView.Socket,
+    websocket: true
+
   socket "/socket", LvSampleWeb.UserSocket,
     websocket: true,
     longpoll: false
