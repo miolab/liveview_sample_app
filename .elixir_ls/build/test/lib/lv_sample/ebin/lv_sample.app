@@ -38,6 +38,7 @@
                         'Elixir.LvSampleWeb.LayoutView 2',
                         'Elixir.LvSampleWeb.LayoutView 3',
                         'Elixir.LvSampleWeb.LayoutView 4',
+                        'Elixir.LvSampleWeb.LiveView',
                         'Elixir.LvSampleWeb.PageController',
                         'Elixir.LvSampleWeb.PageController 2',
                         'Elixir.LvSampleWeb.PageController 3',

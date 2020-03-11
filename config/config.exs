@@ -7,6 +7,10 @@
 # General application configuration
 use Mix.Config
 
+# Configures compilable leex for template
+config :phoenix, :template_engines,
+  leex: Phoenix.LiveView.Engine
+
 # Configures the endpoint
 config :lv_sample, LvSampleWeb.Endpoint,
   live_view: [signing_salt: "8KCb+5yr6mipU6A9UMSO/Wi1r2gnnsqV"],
