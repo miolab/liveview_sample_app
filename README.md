@@ -1,5 +1,7 @@
 # LiveView Sample App
 
+<img src="https://user-images.githubusercontent.com/33124627/76407177-47f6f080-63ce-11ea-80da-59b4704e4d9f.gif" alt="liveview_sample_app1" width="720px">
+
 ## Environment
 ```
 Elixir 1.9.2 (compiled with Erlang/OTP 22)
