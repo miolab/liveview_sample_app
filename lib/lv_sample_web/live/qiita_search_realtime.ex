@@ -7,9 +7,10 @@ defmodule LvSampleWeb.QiitaSearchRealtime do
       <%= if @message do %><%= @message %><% end %>
       </p>
 
-      <form phx-change="change">
-        <input type="text" name="query" value="<%= @query %>" placeholder="empty">
-        Query: <%= @query %>
+      <form phx-submit="submit">
+        <input type="text" name="query" value="<%= @query %>" placeholder="調べたいキーワードを入力..." <%= if @loading, do: "readonly" %> >
+        <p>Query: <%= @query %></p>
+        <input type="submit" value="search" onclick="blur()" <%= if @loading, do: "readonly" %> >
       </form>
 
       <table>
@@ -30,17 +31,23 @@ defmodule LvSampleWeb.QiitaSearchRealtime do
     """
   end
 
-  def mount(_params, _session, socket) do
-    {:ok, assign(socket, query: "", message: "[Init]", results: [])}
+  # def mount(_params, _session, socket) do
+  def mount(_session, socket) do
+    {:ok, assign(socket, query: "", message: "[Init]", loading: false, results: [])}
   end
 
   def handle_event("change", %{"query" => query}, socket) do
     send(self(), {:submit, query})
-    {:noreply, assign(socket, message: "[Seaching...]", query: query)}
+    {:noreply, assign(socket, query: query, message: "")}
+  end
+
+  def handle_event("submit", %{"query" => query}, socket) do
+    send(self(), {:submit, query})
+    {:noreply, assign(socket, query: query, message: "[Seaching...]", loading: true)}
   end
 
   def handle_info({:submit, query}, socket) do
     results = Json.get("https://qiita.com", "/api/v2/items?query=#{ query }")
-    {:noreply, assign(socket, message: "[Complete!]", results: results)}
+    {:noreply, assign(socket, query: query, message: "[Complete!]", loading: false, results: results)}
   end
 end
