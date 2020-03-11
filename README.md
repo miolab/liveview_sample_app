@@ -1,5 +1,10 @@
 # LiveView Sample App
 
+<img src="https://user-images.githubusercontent.com/33124627/76407177-47f6f080-63ce-11ea-80da-59b4704e4d9f.gif" alt="liveview_sample_app1" width="720px">
+
+- __Elixir__ のフレームワーク __Phoenix__ のライブラリ __LiveView__ をつかって、  
+  __Qiita API__ で取得した記事をフロントにリアルタイム表示
+
 ## Environment
 ```
 Elixir 1.9.2 (compiled with Erlang/OTP 22)
