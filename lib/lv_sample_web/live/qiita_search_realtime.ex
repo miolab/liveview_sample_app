@@ -7,7 +7,7 @@ defmodule LvSampleWeb.QiitaSearchRealtime do
       <%= if @message do %><%= @message %><% end %>
       </p>
 
-      <form phx-submit="submit">
+      <form phx-submit="submit" phx-change="change">
         <input type="text" name="query" value="<%= @query %>" placeholder="調べたいキーワードを入力..." <%= if @loading, do: "readonly" %> >
         <p>Query: <%= @query %></p>
         <input type="submit" value="search" onclick="blur()" <%= if @loading, do: "readonly" %> >
@@ -37,7 +37,6 @@ defmodule LvSampleWeb.QiitaSearchRealtime do
   end
 
   def handle_event("change", %{"query" => query}, socket) do
-    send(self(), {:submit, query})
     {:noreply, assign(socket, query: query, message: "")}
   end
 
