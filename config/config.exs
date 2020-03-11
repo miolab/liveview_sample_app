@@ -9,6 +9,7 @@ use Mix.Config
 
 # Configures the endpoint
 config :lv_sample, LvSampleWeb.Endpoint,
+  live_view: ["8KCb+5yr6mipU6A9UMSO/Wi1r2gnnsqV"],
   url: [host: "localhost"],
   secret_key_base: "f8N5jtH0ij7LI0VsQb4OkkR9FuPxDAw9nij4nMrNK2261ZF0wSerJCMQ86/fKxX7",
   render_errors: [view: LvSampleWeb.ErrorView, accepts: ~w(html json)],
