@@ -49,6 +49,8 @@ config :lv_sample, LvSampleWeb.Endpoint,
 config :lv_sample, LvSampleWeb.Endpoint,
   live_reload: [
     patterns: [
+      ~r{lib/lv_sample_web/live/.*(ex)$},
+      ~r{lib/lv_sample_web/templates/.*(leex)$},
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
       ~r{lib/lv_sample_web/views/.*(ex)$},
