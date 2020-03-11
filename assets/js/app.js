@@ -15,3 +15,10 @@ import "phoenix_html"
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
+
+// Import LiveSocket connect
+import {Socket} from "phoenix"
+import LiveSocket from "phoenix_live_view"
+
+let LiveSocket = new LiveSocket("/live")
+LiveSocket.connect()
