@@ -3,7 +3,15 @@
 <img src="https://user-images.githubusercontent.com/33124627/76407177-47f6f080-63ce-11ea-80da-59b4704e4d9f.gif" alt="liveview_sample_app1" width="720px">
 
 - __Elixir__ のフレームワーク __Phoenix__ のライブラリ __LiveView__ をつかって、  
-  __Qiita API__ で取得した記事をフロントにリアルタイム表示
+  __Qiita API__ で取得した記事をサーバーサイドPhoenixの記述でフロントにリアルタイム表示
+
+---
+
+### 結果表示機能をSubmitで切り分けたバージョン
+
+<img src="https://user-images.githubusercontent.com/33124627/76422030-ea6f9d80-63e7-11ea-8d9c-2e44c093595d.gif" alt="liveview_sample_app1" width="720px">
+
+---
 
 ## Environment
 ```
@@ -32,3 +40,4 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+
