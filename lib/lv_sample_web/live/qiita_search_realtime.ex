@@ -21,9 +21,9 @@ defmodule LvSampleWeb.QiitaSearchRealtime do
 
         <%= for result <- @results do %>
         <tr>
-          <td><%= result["id"] %></td>
-          <td><%= result["title"] %></td>
-          <td><%= result["created_at"] %></td>
+          <td><%= result[ "id" ] %></td>
+          <td><%= result[ "title" ] %></td>
+          <td><%= result[ "created_at" ] %></td>
         </tr>
         <% end %>
       </table>
@@ -34,13 +34,13 @@ defmodule LvSampleWeb.QiitaSearchRealtime do
     {:ok, assign(socket, query: "", message: "[Init]", results: [])}
   end
 
-  def handle_event("change", %{"query"=>query}, socket) do
+  def handle_event("change", %{"query" => query}, socket) do
     send(self(), {:submit, query})
     {:noreply, assign(socket, message: "[Seaching...]", query: query)}
   end
 
   def handle_info({:submit, query}, socket) do
-    results = Json.get("https://qiita.com", "/api/v2/items?query=#{query}")
+    results = Json.get("https://qiita.com", "/api/v2/items?query=#{ query }")
     {:noreply, assign(socket, message: "[Complete!]", results: results)}
   end
 end

@@ -3,6 +3,13 @@
 // its own CSS file.
 import css from "../css/app.css"
 
+// Import LiveSocket connect
+import { Socket } from "phoenix"
+import LiveSocket from "phoenix_live_view"
+
+let liveSocket = new LiveSocket("/live", Socket)
+liveSocket.connect()
+
 // webpack automatically bundles all modules in your
 // entry points. Those entry points can be configured
 // in "webpack.config.js".
@@ -15,10 +22,3 @@ import "phoenix_html"
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
-
-// Import LiveSocket connect
-import {Socket} from "phoenix"
-import LiveSocket from "phoenix_live_view"
-
-let LiveSocket = new LiveSocket("/live")
-LiveSocket.connect()
